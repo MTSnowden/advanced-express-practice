@@ -11,7 +11,7 @@ router.get('/vehicles/:id', (req, res) => {
     res.json(showVehicles);
     })
 
-app.post("/vehicles", (req, res) => {
+router.post("/vehicles", (req, res) => {
     const addVehicle = req.body
     const counter = vehicles.length+1
     addVehicle._id = counter

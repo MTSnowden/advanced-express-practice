@@ -11,7 +11,7 @@ router.get ('/comments/:id', (req, res) => {
     res.json(showComments);
 })
 
-app.post("/comments", (req, res) => {
+router.post("/comments", (req, res) => {
     const addComment = req.body
     const counter = comments.length+1
     addComment._id = counter
