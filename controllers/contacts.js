@@ -15,3 +15,5 @@ const create = (addContact) => {
     contacts.push(addContact)
     return addContact
 }
+
+module.exports = { list, show, create}
