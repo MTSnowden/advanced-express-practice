@@ -1,22 +1,11 @@
 const express = require ('express')
 const router = express.Router()
-const { comments } = require('../data/comments')
+const { list, show, create } = require('../controllers/comments')
 
-router.get('/comments', (req, res) => {
-    res.json(comments);
-})
+router.get('/comments', list)
 
-router.get ('/comments/:id', (req, res) => {
-    const showComments = comments.find(c => c._id == req.params.id);
-    res.json(showComments);
-})
+router.get('/comments/:id', show)
 
-router.post("/comments", (req, res) => {
-    const addComment = req.body
-    const counter = comments.length+1
-    addComment._id = counter
-    comments.push(addComment)
-    res.json(addComment)
-})
+router.post("/comments", create)
 
-module.export = router;
+module.exports = router;

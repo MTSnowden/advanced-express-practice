@@ -1,19 +1,19 @@
 const vehicles = require("../data/vehicles");
 
-const list = () => {
-    return vehicles
+const list = (req, res) => {
+    return res.json(vehicles);
 }
 
-const show = (id) => {
-    return vehicles.find(v => v._id == req.params.id)
-}
+const show = (req, res) => {
+    const oneVehicle = vehicles.find(vehicle => vehicle._id == req.params.id)
+    return res.json(oneVehicle)}
 
-const create = (addVehicle) => {
+const create = (req, res) => {
     const addVehicle = req.body
     const counter = vehicles.length+1
     addVehicle._id = counter
     vehicles.push(addVehicle)
-    return addVehicle
+    return res.json(addVehicle)
 }
 
 module.exports = { list, show, create }

@@ -18,9 +18,9 @@ app.get('/', function (req, res) {
     res.send('Hello World')
 })
 app.use(contactsRouter)
-// app.use(vehiclesRouter)
-// app.use(commentsRouter)
-// app.use(productsRouter)
+app.use(vehiclesRouter)
+app.use(commentsRouter)
+app.use(productsRouter)
 
 
 app.listen(port, () => {
