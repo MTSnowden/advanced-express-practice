@@ -9,7 +9,7 @@ router.get('/vehicles', (req, res) => {
 router.get('/vehicles/:id', (req, res) => {
     const showVehicles = vehicles.find(v => v._id == req.params.id);
     res.json(showVehicles);
-    })
+})
 
 router.post("/vehicles", (req, res) => {
     const addVehicle = req.body
