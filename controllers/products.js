@@ -5,7 +5,7 @@ const list = () => {
 }
 
 const show = (id) => {
-    return products.find(c => c._id == req.params.id)
+    return products.find(p => p._id == req.params.id)
 }
 
 const create = (addProduct) => {

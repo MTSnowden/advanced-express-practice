@@ -7,16 +7,22 @@ const productsRouter = require("./routes/products");
 const app = express();
 const port = process.env.PORT || 4001;
 
+// app.get('/', function (req, res) {
+//     res.send('Hello World')
+// })
+
 app.use(express.static("public"))
 app.use(bodyParser.json())
 
+app.get('/', function (req, res) {
+    res.send('Hello World')
+})
 app.use(contactsRouter)
-app.use(vehiclesRouter)
-app.use(commentsRouter)
-app.use(productsRouter)
+// app.use(vehiclesRouter)
+// app.use(commentsRouter)
+// app.use(productsRouter)
 
 
 app.listen(port, () => {
  console.log(`Your mom is listening on port ${port}!`);
 });
-

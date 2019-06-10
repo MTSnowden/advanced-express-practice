@@ -1,19 +1,18 @@
 const contacts = require("../data/contacts");
 
-const list = () => {
-    return contacts
+module.exports.list = (req, res) => {
+    return res.json(contacts)
 }
 
-const show = (id) => {
-   return contacts.find(c => c._id == req.params.id)
+module.exports.show = (req, res) => {
+   const oneContact = contacts.find(contact => contact._id == req.params.id)
+   return res.json(oneContact)
 }
 
-const create = (addContact) => {
+module.exports.create = (req, res) => {
     const addContact = req.body 
     const counter = contacts.length+1
     addContact._id = counter
     contacts.push(addContact)
-    return addContact
+    return res.json(addContact)
 }
-
-module.exports = { list, show, create}
