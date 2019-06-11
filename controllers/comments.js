@@ -27,4 +27,5 @@ const create = (req, res) => {
     return res.json(addComment)
 }
 
+// all of these are exported to the router. 
 module.exports = { list, show, create } 

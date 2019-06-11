@@ -14,9 +14,7 @@ const port = process.env.PORT || 4001;
 app.use(express.static("public"))
 app.use(bodyParser.json())
 
-app.get('/', function (req, res) {
-    res.send('Hello World')
-})
+
 app.use(contactsRouter)
 app.use(vehiclesRouter)
 app.use(commentsRouter)
