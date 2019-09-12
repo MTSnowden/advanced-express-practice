@@ -7,9 +7,6 @@ const productsRouter = require("./routes/products");
 const app = express();
 const port = process.env.PORT || 4001;
 
-// app.get('/', function (req, res) {
-//     res.send('Hello World')
-// })
 
 app.use(express.static("public"))
 app.use(bodyParser.json())
